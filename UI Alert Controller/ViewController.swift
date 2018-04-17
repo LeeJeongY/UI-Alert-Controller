@@ -20,19 +20,20 @@ class ViewController: UIViewController {
         
         let myAlert = UIAlertController(title: "알림", message: "설정된 시간이 되었습니다!", preferredStyle: .alert)
         
-        let okAction = UIAlertAction(title: "확인", style: .default, handler:
-            {(myAction: UIAlertAction) -> Void in
-                self.view.backgroundColor = UIColor.yellow
-            })
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler:
-            {(myAction: UIAlertAction) -> Void in
-            self.view.backgroundColor = UIColor.white
-        })
+        let okAction = UIAlertAction(title: "확인", style: .default) {  // 후행 클로저(Trailing Closure)
+            (myAction: UIAlertAction) -> Void in
+                self.view.backgroundColor = UIColor.yellow
+            }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) {  // 후행 클로저(Trailing Closure)
+            (myAction: UIAlertAction) -> Void in
+                self.view.backgroundColor = UIColor.white
+        }
         
         let testAction = UIAlertAction(title: "Delete", style: .destructive, handler:
-        {(myAction: UIAlertAction) -> Void in
-            self.view.backgroundColor = UIColor.green
+            {(myAction: UIAlertAction) -> Void in
+                self.view.backgroundColor = UIColor.green
         })
         
         myAlert.addAction(okAction)
